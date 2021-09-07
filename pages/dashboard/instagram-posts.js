@@ -22,7 +22,6 @@ function InstagramPosts() {
 				</div>
 				<div className="pt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
 					{results.map((result, idx) => {
-						console.log(result);
 						const { caption, media_url, like_count, comments_count } = result;
 						return (
 							<div

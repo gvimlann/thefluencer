@@ -1,18 +1,18 @@
 import { Fragment } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
-	{ name: 'Overview', href: '/', current: true },
+	{ name: 'Overview', href: '/' },
 	{
 		name: 'Instagram Posts',
 		href: '/dashboard/instagram-posts',
-		current: false,
 	},
-	{ name: 'Instagram Stories', href: '#', current: false },
-	{ name: 'Profile Insights', href: '#', current: false },
-	{ name: 'Reports', href: '/dashboard/reports', current: false },
+	{ name: 'Instagram Stories', href: '#' },
+	{ name: 'Profile Insights', href: '#' },
+	{ name: 'Reports', href: '/dashboard/reports' },
 ];
 
 function classNames(...classes) {
@@ -20,6 +20,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+	const router = useRouter();
+
 	return (
 		<Disclosure as="nav" className="bg-[#262626]">
 			{({ open }) => (
@@ -59,12 +61,14 @@ export default function Navbar() {
 												key={item.name}
 												href={item.href}
 												className={classNames(
-													item.current
+													router.pathname == item.href
 														? 'bg-gray-900 text-white'
 														: 'text-gray-300 hover:bg-gray-700 hover:text-white',
 													'px-3 py-2 rounded-md text-sm font-medium'
 												)}
-												aria-current={item.current ? 'page' : undefined}>
+												aria-current={
+													router.pathname == item.href ? 'page' : undefined
+												}>
 												{item.name}
 											</a>
 										))}
