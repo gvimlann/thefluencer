@@ -4,11 +4,15 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
-	{ name: 'Overview', href: '#', current: true },
-	{ name: 'Instagram Posts', href: '#', current: false },
+	{ name: 'Overview', href: '/', current: true },
+	{
+		name: 'Instagram Posts',
+		href: '/dashboard/instagram-posts',
+		current: false,
+	},
 	{ name: 'Instagram Stories', href: '#', current: false },
 	{ name: 'Profile Insights', href: '#', current: false },
-	{ name: 'Reports', href: '#', current: false },
+	{ name: 'Reports', href: '/dashboard/reports', current: false },
 ];
 
 function classNames(...classes) {

@@ -2,15 +2,11 @@ import Link from 'next/link';
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-
-const navigation = [
-	{ name: 'Product', href: '#' },
-	{ name: 'Features', href: '#' },
-	{ name: 'Marketplace', href: '#' },
-	{ name: 'Company', href: '#' },
-];
+import { OverviewStat } from '../mockData/OverviewStat';
 
 export default function HeroSection() {
+	const { results } = OverviewStat;
+
 	return (
 		<div className="flex bg-[#d3d3d3] overflow-hidden">
 			<div className="max-w-7xl mx-auto">
@@ -64,7 +60,21 @@ export default function HeroSection() {
 					</span>
 				</div>
 				<div className="flex flex-col text-2xl max-w-md space-y-5">
-					<div className="flex justify-between">
+					{results.map(({ stat_type, stat_value }, idx) => {
+						// const stat_type_split = stat_type.split(' ');
+						return (
+							<div className="flex justify-between" key={idx}>
+								<span className="border-gray-400">
+									{stat_type}
+									{/* Average <span className="font-bold">Impressions</span> per day */}
+									{/* <span className="font-bold"> {stat_type_split[1]} </span> */}
+								</span>
+								<span>{stat_value}</span>
+							</div>
+						);
+					})}
+
+					{/* <div className="flex justify-between">
 						<span className="border-gray-400">
 							Average <span className="font-bold">Impressions</span> per day
 						</span>
@@ -81,7 +91,7 @@ export default function HeroSection() {
 							Average <span className="font-bold">Profile</span> Views per day
 						</span>
 						<span>0</span>
-					</div>
+					</div> */}
 				</div>
 				{/* </div> */}
 			</div>

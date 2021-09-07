@@ -39,7 +39,9 @@ function BestPerformingSection() {
 				</span>
 				<div className="flex flex-col mt-2">
 					{hashtags.map((hashtag, idx) => (
-						<div key={idx} className="flex flex-row justify-between space-y-1">
+						<div
+							key={idx}
+							className="flex flex-row justify-between space-y-1 border-b border-gray-300">
 							<span>#{hashtag.name}</span>
 							<span>{hashtag.percentage}%</span>
 						</div>
@@ -53,7 +55,9 @@ function BestPerformingSection() {
 				</span>
 				<div className="flex flex-col mt-2">
 					{mentions.map((mention, idx) => (
-						<div key={idx} className="flex flex-row justify-between space-y-1">
+						<div
+							key={idx}
+							className="flex flex-row justify-between space-y-1 border-b border-gray-300">
 							<span>#{mention.name}</span>
 							<span>{mention.percentage}%</span>
 						</div>
@@ -67,7 +71,9 @@ function BestPerformingSection() {
 				</span>
 				<div className="flex flex-col mt-2">
 					{medias.map((media, idx) => (
-						<div key={idx} className="flex flex-row justify-between space-y-1">
+						<div
+							key={idx}
+							className="flex flex-row justify-between space-y-1 border-b border-gray-300">
 							<span>{media.name}</span>
 							<span>{media.percentage}%</span>
 						</div>
