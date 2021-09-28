@@ -20,14 +20,14 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
-export default function Navbar() {
+export default function NavbarWhite() {
 	const router = useRouter();
 
 	return (
-		<Disclosure as="nav" className="bg-[#262626]">
+		<Disclosure as="nav" className="bg-white">
 			{({ open }) => (
 				<>
-					<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+					<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 border-b-2">
 						<div className="relative flex items-center justify-between h-16">
 							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
 								{/* Mobile menu button*/}
@@ -54,8 +54,9 @@ export default function Navbar() {
 										src="/assets/thefluencer-logo.svg"
 										alt="TheFluencer"
 									/>
+									<div className="text-black">Thefluencer</div>
 								</div>
-								<div className="hidden sm:block sm:ml-6">
+								{/* <div className="hidden sm:block sm:ml-6">
 									<div className="flex space-x-4">
 										{navigation.map((item) => (
 											<a
@@ -74,9 +75,14 @@ export default function Navbar() {
 											</a>
 										))}
 									</div>
-								</div>
+								</div> */}
 							</div>
 							<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+								<Link href="https://thefluencer.studio/social-auth/login/facebook/">
+									<div className="text-black cursor-pointer hover:bg-gray-100 hover:shadow-sm p-3 rounded-md">
+										Login With Facebook
+									</div>
+								</Link>
 								{/* <button
 									type="button"
 									className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -85,7 +91,7 @@ export default function Navbar() {
 								</button> */}
 
 								{/* Profile dropdown */}
-								<Menu as="div" className="ml-3 relative">
+								{/* <Menu as="div" className="ml-3 relative">
 									<div>
 										<Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 											<span className="sr-only">Open user menu</span>
@@ -143,12 +149,12 @@ export default function Navbar() {
 											</Menu.Item>
 										</Menu.Items>
 									</Transition>
-								</Menu>
+								</Menu> */}
 							</div>
 						</div>
 					</div>
 
-					<Disclosure.Panel className="sm:hidden">
+					{/* <Disclosure.Panel className="sm:hidden">
 						<div className="px-2 pt-2 pb-3 space-y-1">
 							{navigation.map((item) => (
 								<a
@@ -165,7 +171,7 @@ export default function Navbar() {
 								</a>
 							))}
 						</div>
-					</Disclosure.Panel>
+					</Disclosure.Panel> */}
 				</>
 			)}
 		</Disclosure>

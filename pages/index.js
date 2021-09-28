@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import BestPerformingSection from '../components/BestPerformingSection';
-import Footer from '../components/Footer';
+import NavbarWhite from '../components/NavbarWhite';
 
 export default function Home() {
 	return (
@@ -13,9 +13,17 @@ export default function Home() {
 			</Head>
 
 			<main>
-				<Navbar />
-				<HeroSection />
-				<BestPerformingSection />
+				{/* <Navbar /> */}
+				<NavbarWhite />
+				<div className="bg-[#eff6fd] text-center py-20 space-y-5">
+					<div className="text-[#ef6461] text-5xl font-semibold">
+						Maximize Your Influence.
+					</div>
+					<div className="text-xl font-regular">
+						TheFluencer is your personal AI Driven Influencer Manager that will
+						assist you with all your content creation needs.
+					</div>
+				</div>
 			</main>
 
 			<Footer />

@@ -1,4 +1,8 @@
+import { OverviewGrowth } from '../mockData/OverviewGrowth';
+
 function BestPerformingSection() {
+	const { results } = OverviewGrowth;
+
 	const hashtags = [
 		{
 			name: 'creativeagency',
