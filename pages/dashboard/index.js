@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import HeroSection from '../components/HeroSection';
-import BestPerformingSection from '../components/BestPerformingSection';
+import Footer from '../../components/Footer';
+import HeroSection from '../../components/HeroSection';
+import BestPerformingSection from '../../components/BestPerformingSection';
+import Navbar from '../../components/NavbarWhite';
 
 export default function Home() {
 	return (
